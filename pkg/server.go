@@ -7,10 +7,15 @@ import (
 )
 
 func InitFiber(conf configs.Config) *fiber.App {
-	return fiber.New(fiber.Config{
+	app := fiber.New(fiber.Config{
 		AppName:   conf.AppName,
 		BodyLimit: conf.BodyLimit,
 	})
+
+	app.Server().MaxConnsPerIP = conf.MaxConnsPerIP
+	app.Server().MaxRequestsPerConn = conf.MaxRequestsPerConn
+
+	return app
 }
 
 func ServeFiber(app *fiber.App, conf configs.Config) {

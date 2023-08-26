@@ -9,7 +9,7 @@
 
 ### roadmap :
 
-1. [ ] add middlewares
+1. [x] add middlewares
 2. [ ] add auto load swagger
 3. [ ] add gorm
 4. [ ] dockerize project

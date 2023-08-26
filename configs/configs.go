@@ -23,7 +23,11 @@ type Config struct {
 	DBUsername string `env:"DB_USERNAME" envDefault:"root"`
 	DBPassword string `env:"DB_PASSWORD" envDefault:"secret"`
 
-	BodyLimit int `env:"BODY_LIMIT" envDefault:"4198400"`
+	BodyLimit          int `env:"BODY_LIMIT" envDefault:"4198400"`
+	MaxConnsPerIP      int `env:"MAX_CONNS_PER_IP"`
+	MaxRequestsPerConn int `env:"MAX_REQUESTS_PER_CONN"`
+
+	EncryptCookieKey string `env:"ENCRYPT_COOKIE_KEY"`
 }
 
 func Init() Config {
