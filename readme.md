@@ -3,6 +3,7 @@
 
 
 * first clone project
+* then cp `.env.example` to `.env`
 * then run `go mod tidy`
 * then run `go run main.go` 
 
