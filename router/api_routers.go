@@ -1,16 +1,16 @@
 package router
 
 import (
-	"fiber_test/handlers/home"
+	"fiber_test/configs"
+	"fiber_test/entities/handlers"
+	"fiber_test/entities/router"
 	"github.com/gofiber/fiber/v2"
 )
 
-func InitApiRoutes(app *fiber.App) {
-	app.Get("/", home.Index)
+func InitApiRoutes(app *fiber.App, conf configs.Config) {
+	app.Get("/", handlers.Index)
 
 	v1 := app.Group("v1")
 
-	v1.Get("/test", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("v1/test")
-	})
+	router.InitUserRoutes(v1, conf)
 }

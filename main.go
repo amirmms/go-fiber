@@ -12,9 +12,11 @@ func main() {
 
 	app := pkg.InitFiber(conf)
 
+	//database.ConnectDB(conf)
+
 	middlewares.InitDefaultMiddlewares(app, conf)
 
-	router.InitApiRoutes(app)
+	router.InitApiRoutes(app, conf)
 
 	pkg.ServeFiber(app, conf)
 }
