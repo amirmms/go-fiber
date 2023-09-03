@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  app:
+    image:  cosmtrek/air
+    container_name: "app"
+    volumes:
+      - ./:/usr/app
+    environment:
+      air_wd: "/usr/app"
+    networks:
+      - gofiber
+    ports:
+      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
   postgres:
     image: postgres:15.1-alpine
     container_name: "go-postgres"
@@ -11,8 +22,13 @@ services:
       PGDATA: "/data/postgres"
     volumes:
       - postgres:/data/postgres
+    networks:
+      - gofiber
     ports:
       - "${DB_PORT:-5432}:5432"
+networks:
+  gofiber:
+    driver: bridge
 volumes:
   postgres:
     driver: local

@@ -1,4 +1,4 @@
-package logger
+package logs
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-// app logger
+// app logs
 var appLogger *zap.SugaredLogger
 
 func init() {

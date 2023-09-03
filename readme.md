@@ -16,7 +16,7 @@
 5. [ ] add redis
 6. [x] add postgresql sql
 7. [x] add migrations
-8. [ ] add auto refresh in go
+8. [x] add auto refresh in go
 9. [ ] add auth2 token
 10. [ ] CRUD for users
 11. [ ] role & permissions guard
