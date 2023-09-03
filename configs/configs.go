@@ -14,7 +14,7 @@ const (
 type Config struct {
 	AppEnv  string `env:"APP_ENV" envDefault:"local"`
 	AppName string `env:"APP_NAME"`
-	AppHost string `env:"APP_HOST" envDefault:"localhost"`
+	AppHost string `env:"APP_HOST" envDefault:""`
 	AppPort string `env:"APP_PORT" envDefault:"8080"`
 
 	DBHost     string `env:"DB_HOST" envDefault:"localhost"`
