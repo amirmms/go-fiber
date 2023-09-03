@@ -2,6 +2,7 @@ package main
 
 import (
 	"fiber_test/configs"
+	"fiber_test/database"
 	"fiber_test/pkg"
 	"fiber_test/pkg/middlewares"
 	"fiber_test/router"
@@ -12,9 +13,9 @@ func main() {
 
 	app := pkg.InitFiber(conf)
 
-	//database.ConnectDB(conf)
-
 	middlewares.InitDefaultMiddlewares(app, conf)
+
+	database.ConnectDB(conf)
 
 	router.InitApiRoutes(app, conf)
 

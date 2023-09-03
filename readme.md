@@ -12,10 +12,12 @@
 1. [x] add middlewares
 2. [ ] add auto load swagger
 3. [x] add gorm
-4. [ ] dockerize project
+4. [x] dockerize project
 5. [ ] add redis
-6. [ ] add postgresql sql
-7. [ ] add auto refresh in go
-8. [ ] add auth2 token
-9. [ ] CRUD for users
-10. [ ] role & permissions guard
+6. [x] add postgresql sql
+7. [x] add migrations
+8. [ ] add auto refresh in go
+9. [ ] add auth2 token
+10. [ ] CRUD for users
+11. [ ] role & permissions guard
+12. [x] add log file `(ZAP)`

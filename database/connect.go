@@ -28,6 +28,11 @@ func ConnectDB(conf configs.Config) {
 		log.Fatal(err)
 	}
 
+	Migration(DB)
+
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func GetDBClient() *gorm.DB {
