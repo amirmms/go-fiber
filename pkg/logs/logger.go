@@ -45,7 +45,7 @@ func getEncoder() zapcore.Encoder {
 func getLogWriter() zapcore.WriteSyncer {
 	fileName := fmt.Sprintf(
 		"log-%v.log",
-		time.Now().UTC().Format("2006-01-01"),
+		time.Now().UTC().Format("2006-01-02"),
 	)
 
 	lumberJackLogger := &lumberjack.Logger{
