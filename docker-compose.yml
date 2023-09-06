@@ -11,10 +11,10 @@ services:
     networks:
       - gofiber
     ports:
-      - "${APP_PORT:-8080}:${APP_PORT:-8080}"
+      - "${FORWARD_APP_PORT:-8080}:${APP_PORT:-8080}"
   postgres:
     image: postgres:15.1-alpine
-    container_name: "go-postgres"
+    container_name: "postgres"
     environment:
       POSTGRES_DB: ${DB_DATABASE}
       POSTGRES_USER: ${DB_USERNAME}
@@ -25,10 +25,27 @@ services:
     networks:
       - gofiber
     ports:
-      - "${DB_PORT:-5432}:5432"
+      - "${FORWARD_DB_PORT:-5432}:${DB_PORT:-5432}"
+  redis:
+    image: "redis:alpine"
+    container_name: "redis"
+    command: >
+      --requirepass ${REDIS_PASSWORD}
+    ports:
+      - "${FORWARD_REDIS_PORT:-6379}:${REDIS_PORT:-6379}"
+    volumes:
+      - "redis:/data"
+    networks:
+      - gofiber
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      retries: 3
+      timeout: 5s
 networks:
   gofiber:
     driver: bridge
 volumes:
   postgres:
+    driver: local
+  redis:
     driver: local

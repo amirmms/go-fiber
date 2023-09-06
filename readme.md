@@ -10,14 +10,14 @@
 ### roadmap :
 
 1. [x] add middlewares
-2. [ ] add auto load swagger
-3. [x] add gorm
-4. [x] dockerize project
-5. [ ] add redis
-6. [x] add postgresql sql
-7. [x] add migrations
-8. [x] add auto refresh in go
-9. [ ] add auth2 token
-10. [ ] CRUD for users
-11. [ ] role & permissions guard
-12. [x] add log file `(ZAP)`
+2. [x] add gorm
+3. [x] dockerize project
+4. [x] add postgresql sql
+5. [x] add migrations
+6. [x] add auto refresh in go
+7. [x] add log file `(ZAP)`
+8. [x] add redis
+9. [ ] add auto load swagger
+10. [ ] add auth2 token
+11. [ ] CRUD for users
+12. [ ] role & permissions guard

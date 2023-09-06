@@ -18,10 +18,14 @@ type Config struct {
 	AppPort string `env:"APP_PORT" envDefault:"8080"`
 
 	DBHost     string `env:"DB_HOST" envDefault:"localhost"`
-	DBPort     string `env:"DB_PORT" envDefault:"3306"`
+	DBPort     string `env:"DB_PORT" envDefault:"5432"`
 	DBDatabase string `env:"DB_DATABASE" envDefault:"database"`
 	DBUsername string `env:"DB_USERNAME" envDefault:"root"`
 	DBPassword string `env:"DB_PASSWORD" envDefault:"secret"`
+
+	RedisHost     string `env:"REDIS_HOST" envDefault:"localhost"`
+	RedisPort     string `env:"REDIS_PORT" envDefault:"6379"`
+	RedisPassword string `env:"REDIS_PASSWORD"`
 
 	BodyLimit          int `env:"BODY_LIMIT" envDefault:"4198400"`
 	MaxConnsPerIP      int `env:"MAX_CONNS_PER_IP"`

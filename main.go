@@ -5,6 +5,7 @@ import (
 	"fiber_test/database"
 	"fiber_test/pkg"
 	"fiber_test/pkg/middlewares"
+	"fiber_test/pkg/redis"
 	"fiber_test/router"
 )
 
@@ -16,6 +17,7 @@ func main() {
 	middlewares.InitDefaultMiddlewares(app, conf)
 
 	database.ConnectDB(conf)
+	redis.ConnectDB(conf)
 
 	router.InitApiRoutes(app, conf)
 
