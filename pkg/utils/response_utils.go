@@ -14,3 +14,11 @@ func Response(isSuccess bool, message string, data any) fiber.Map {
 		"data":    data,
 	}
 }
+
+func ValidationResponse(data any) fiber.Map {
+	return Response(
+		false,
+		"Unprocessable Entity",
+		data,
+	)
+}

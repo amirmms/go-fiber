@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"log"
 )
 
@@ -26,6 +27,10 @@ func ConnectDB(conf configs.Config) {
 
 	if err != nil {
 		log.Fatal(err)
+	}
+
+	if conf.AppEnv != configs.PROD {
+		DB.Logger = logger.Default.LogMode(logger.Info)
 	}
 
 	Migration(DB)

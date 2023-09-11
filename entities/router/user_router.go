@@ -11,5 +11,9 @@ func InitUserRoutes(parentRoute fiber.Router, conf configs.Config) {
 
 	userHandler := handlers.InitUserHandler(conf)
 
-	userGroup.Get("/", userHandler.GetUserList)
+	userGroup.Get("/", userHandler.Index)
+	userGroup.Get("/:id", userHandler.Show)
+	userGroup.Delete("/:id", userHandler.Delete)
+	userGroup.Patch("/:id", userHandler.Update)
+	userGroup.Post("/", userHandler.Store)
 }

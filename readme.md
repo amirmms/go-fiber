@@ -17,7 +17,7 @@
 6. [x] add auto refresh in go
 7. [x] add log file `(ZAP)`
 8. [x] add redis
-9. [ ] add auto load swagger
-10. [ ] add auth2 token
-11. [ ] CRUD for users
+9. [x] CRUD for users
+10. [ ] add auto load swagger
+11. [ ] add auth2 token
 12. [ ] role & permissions guard
